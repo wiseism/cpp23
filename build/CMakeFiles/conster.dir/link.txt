@@ -1,0 +1,1 @@
+/usr/local/gcc-14.2.0/bin/g++-14.2.0 -g CMakeFiles/conster.dir/src/main.cpp.o -o conster

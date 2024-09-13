@@ -2,7 +2,6 @@
 
 #include <print>
 #include <format>
-// #include <string>
 #include <iostream>
 #include <sstream>
 namespace wei_utils
@@ -35,28 +34,47 @@ namespace wei_utils
         {
             os.seekp(-2, std::ios_base::end); // 移除最后一个逗号和空格
         }
-        os << "}\n";
-        std::cout << os.str();
+        os << "}";
+        std::cout << os.str()<<std::endl;
     }
 
-    // 定义一个概念，用于限定可以迭代的容器类型
     // 定义一个概念，用于限定可以迭代的容器类型
     template <typename Rng>
     concept iterable_range = std::ranges::range<Rng> && !is_map_type<Rng>;
 
+    // 打印任意可迭代容器
+    // template <iterable_range Rng>
+    // void print(const Rng &container)
+    // {
+    //     std::ostringstream os;
+    //     os << "[";
+    //     std::ranges::copy(container, std::ostream_iterator<typename Rng::value_type>(os, ", "));
+    //     if (!container.empty())
+    //     {
+    //         os.seekp(-2, std::ios_base::end); // 移除最后一个逗号和空格
+    //     }
+    //     os << "]";
+    //     std::cout << os.str()<<std::endl;
+    // }
+
+    
     // 打印任意可迭代容器
     template <iterable_range Rng>
     void print(const Rng &container)
     {
         std::ostringstream os;
         os << "[";
-        std::ranges::copy(container, std::ostream_iterator<typename Rng::value_type>(os, ", "));
+        for (const auto& item : container)
+        {
+
+            os << item<< ", "; // 直接输出item
+        }
         if (!container.empty())
         {
             os.seekp(-2, std::ios_base::end); // 移除最后一个逗号和空格
         }
-        os << "]\n";
-        std::cout << os.str();
+        os << "]";
+        std::cout << os.str() << std::endl;
     }
 
 }

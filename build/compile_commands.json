@@ -1,7 +1,7 @@
 [
 {
   "directory": "/home/wei/program/c++/c++23/build",
-  "command": "/usr/local/gcc-14.2.0/bin/g++-14.2.0   -g -std=gnu++23 -o CMakeFiles/conster.dir/src/main.cpp.o -c /home/wei/program/c++/c++23/src/main.cpp",
+  "command": "/usr/local/gcc-14.2.0/bin/g++-14.2.0 -g -std=gnu++23 -o CMakeFiles/conster.dir/src/main.cpp.o -c /home/wei/program/c++/c++23/src/main.cpp",
   "file": "/home/wei/program/c++/c++23/src/main.cpp",
   "output": "CMakeFiles/conster.dir/src/main.cpp.o"
 }

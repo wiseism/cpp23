@@ -12,6 +12,7 @@
 #include <list>
 #include "print.hpp"
 
+
 using namespace wei_utils;
 
 template <typename... Args>
@@ -31,7 +32,6 @@ struct A
         os << "A(x=" << a.x << ", y=" << a.y << ")";
         return os;
     }
-
     /* data */
 };
 
@@ -41,6 +41,7 @@ int main()
     int x = 42;
     double pi = 3.14159;
     std::string name = "Alice";
+
 
     // 使用可变参数模板函数
     wei_utils::print("a={},b={},c={}\n", x, pi, name); // 输出: 42 3.14159 Alice
@@ -65,6 +66,8 @@ int main()
 
     std::vector<A> v = {{1, 1.1}, {2, 2.2}, {3, 3.3}};
     print(v); // 输出: A(x=1, y=1.1) A(x=2, y=2.2) A(x=3, y=3.3)
+
+    
 
     return 0;
 }
